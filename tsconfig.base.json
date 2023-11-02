@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ebuy/ui": ["libs/ui/src/index.ts"]
+      "@ebuy/ui": ["libs/ui/src/index.ts"],
+      "@my-mfe/mocks": ["libs/mocks/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
