@@ -1,0 +1,33 @@
+{
+  "name": "catalog-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/catalog-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/catalog-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "catalog:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "catalog:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "catalog:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/catalog-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["catalog"],
+  "tags": []
+}
