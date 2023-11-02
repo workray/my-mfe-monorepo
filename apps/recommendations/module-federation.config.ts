@@ -1,7 +1,7 @@
 import { ModuleFederationConfig } from '@nx/webpack';
 
 const config: ModuleFederationConfig = {
-  name: 'catalog',
+  name: 'recommendations',
   exposes: {
     './Module': './src/remote-entry.ts',
   },
