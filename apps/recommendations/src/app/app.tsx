@@ -1,4 +1,4 @@
-import 'semantic-ui-css';
+import 'semantic-ui-css/semantic.min.css';
 
 export function App() {
   return (
