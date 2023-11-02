@@ -19,7 +19,7 @@
         "styles": ["apps/checkout/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/checkout/webpack.config.js"
+        "webpackConfig": "apps/checkout/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -45,12 +45,13 @@
       }
     },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
+      "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "checkout:build",
         "hmr": true,
-        "port": 4201
+        "port": 4202,
+        "webpackConfig": "apps/checkout/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -71,8 +72,10 @@
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
+      "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "checkout:build"
+        "buildTarget": "checkout:build",
+        "port": 4202
       }
     },
     "test": {

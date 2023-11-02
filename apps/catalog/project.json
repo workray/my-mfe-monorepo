@@ -19,7 +19,7 @@
         "styles": ["apps/catalog/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/catalog/webpack.config.js"
+        "webpackConfig": "apps/catalog/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -45,12 +45,13 @@
       }
     },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
+      "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "catalog:build",
         "hmr": true,
-        "port": 4200
+        "port": 4201,
+        "webpackConfig": "apps/catalog/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -71,8 +72,10 @@
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
+      "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "catalog:build"
+        "buildTarget": "catalog:build",
+        "port": 4201
       }
     },
     "test": {
