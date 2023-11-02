@@ -50,7 +50,8 @@
       "options": {
         "buildTarget": "checkout:build",
         "hmr": true,
-        "port": 4201
+        "port": 4201,
+        "baseHref": "/checkout/"
       },
       "configurations": {
         "development": {

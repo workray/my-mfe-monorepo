@@ -1,14 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-
-import NxWelcome from './nx-welcome';
-
+import { Header } from '@ebuy/ui';
+import { Container, Header as Text } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
 export function App() {
   return (
-    <div>
-      <NxWelcome title="checkout" />
-    </div>
+    <Container style={{ marginTop: '5rem' }}>
+      <Header />
+      <Text size="huge">Checkout App</Text>
+    </Container>
   );
 }
-
 export default App;
