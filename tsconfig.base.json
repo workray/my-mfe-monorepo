@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@ebuy/ui": ["libs/ui/src/index.ts"],
-      "@my-mfe/mocks": ["libs/mocks/src/index.ts"]
+      "@ebuy/mocks": ["libs/mocks/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
