@@ -1,8 +1,10 @@
 import { ModuleFederationConfig } from '@nx/webpack';
 
 const config: ModuleFederationConfig = {
-  name: 'app-shell',
-  remotes: ['catalog', 'checkout', 'store'],
+  name: 'store',
+  exposes: {
+    './Module': './src/remote-entry.ts',
+  },
 };
 
 export default config;
